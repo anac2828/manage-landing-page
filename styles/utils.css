@@ -1,0 +1,123 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/* COLOR */
+.text-clr-primary-400 {
+  color: var(--clr-primary-400);
+}
+.text-clr-accent-400 {
+  color: var(--clr-accent-400);
+}
+.text-clr-accent-100 {
+  color: var(--clr-accent-100);
+}
+.text-clr-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+.text-clr-neautral-199 {
+  color: var(--clr-neutral-900);
+}
+
+.bg-clr-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+.bg-clr-accent-400 {
+  background-color: var(--clr-accent-400);
+}
+.bg-clr-accent-100 {
+  background-color: var(--clr-accent-100);
+}
+.bg-clr-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+.bg-clr-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+/* FONTS weight and color */
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+/* font size with no numbers change */
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+}
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+}
+
+/* These don't change in size */
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.padding-block-900 {
+  padding-block: var(--size-900);
+}
+
+.padding-block-700 {
+  padding-block: var(--size-700);
+}
+
+.margin-top-900 {
+  margin-block-start: var(--size-900);
+}
+
+:where(.flow > :not(:first-child)) {
+  margin-top: var(--flow-spacer, 3rem);
+}
+
+.container {
+  /* custom properties */
+  --max-width: 1110px;
+  --padding: 1rem;
+
+  /* width will be the least of --max-width or 100% width */
+  /* when text gets to close to the edge 1rem will be subtructed from 100% of its width */
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  /* left and right margins only */
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 2rem;
+}
+
+@media only screen and (min-width: 50rem) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}

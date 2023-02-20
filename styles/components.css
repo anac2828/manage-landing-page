@@ -1,0 +1,92 @@
+.btn {
+  border: none;
+  border-radius: 100vmax;
+  padding: 1em 2.5em;
+  font-size: var(--fs-button);
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-100);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 1.125em 1em -1em var(--clr-accent-500);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--clr-accent-300);
+}
+
+.btn--no-shadow {
+  box-shadow: none;
+}
+
+.btn--white {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-400);
+}
+
+.btn--white:hover,
+.btn--white:focus-visible {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-300);
+}
+
+/* IMAGE WITH BLOB */
+
+@media (max-width: 50em) {
+  .hero {
+    text-align: center;
+  }
+
+  .hero p {
+    margin-inline: auto;
+  }
+  .hero__img {
+    order: -1;
+  }
+}
+
+.hero__img::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 87%;
+  max-height: 70vh;
+  aspect-ratio: 1 / 1.2;
+  background-image: url(../images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  /* the part of the image what will show */
+  background-position: bottom left;
+}
+
+.about__content {
+  position: relative;
+}
+
+.about__content::before {
+  content: url(../images/bg-tablet-pattern.svg);
+  zoom: 40%;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  left: 77%;
+  bottom: 105%;
+  width: 100px;
+}
+
+@media (min-width: 50em) {
+  .hero__img::before {
+    width: 45%;
+  }
+
+  .about__content::before {
+    zoom: 70%;
+    z-index: -1;
+    left: -500px;
+    top: 48%;
+    width: 100px;
+  }
+}
