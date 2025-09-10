@@ -101,7 +101,7 @@
 .container {
   /* custom properties */
   --max-width: 1110px;
-  --padding: 1rem;
+  --padding: 2rem;
 
   /* width will be the least of --max-width or 100% width */
   /* when text gets to close to the edge 1rem will be subtructed from 100% of its width */
